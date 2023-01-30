@@ -1,0 +1,56 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@property --m-0 {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+@property --m-1 {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+@property --m-2 {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+@property --m-3 {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+.img {
+  width: 300px;
+  height: 300px;
+  background: url(https://cdn.jsdelivr.net/gh/floiges/pics/img/avatar.jpg);
+  background-size: 100% 100%;
+  -webkit-mask:
+    linear-gradient(90deg, rgba(0, 0, 0, var(--m-0)), rgba(0, 0, 0, var(--m-0))),
+    linear-gradient(90deg, rgba(0, 0, 0, var(--m-1)), rgba(0, 0, 0, var(--m-1))),
+    linear-gradient(90deg, rgba(0, 0, 0, var(--m-2)), rgba(0, 0, 0, var(--m-2))),
+    linear-gradient(90deg, rgba(0, 0, 0, var(--m-2)), rgba(0, 0, 0, var(--m-2)));
+  -webkit-mask-size: 50% 50%;
+  -webkit-mask-position: left top, right top, left bottom, bottom right;
+  -webkit-mask-repeat: no-repeat;
+  transition:
+    --m-0 0.3s,
+    --m-1 0.15s 0.1s,
+    --m-2 0.25s 0.21s,
+    --m-3 0.19s 0.15s;
+}
+
+.img:hover {
+  --m-0: 0;
+  --m-1: 0;
+  --m-2: 0;
+  --m-3: 0;
+}
